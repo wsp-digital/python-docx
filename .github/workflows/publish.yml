@@ -14,7 +14,7 @@ jobs:
     - name: Set output
       id: vars
       run: echo ::set-output \
-        name=version::$(cat VERSION)
+        name=version::$(grep '__version__ = ' src/docx/__init__.py | awk '{print $3}' | tr -d '"')
     - name: Set up Python
       uses: actions/setup-python@v2
       with:
