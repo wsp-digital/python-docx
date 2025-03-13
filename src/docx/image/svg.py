@@ -65,6 +65,6 @@ class Svg(BaseImageHeader):
         stream.seek(0)
         data = stream.read()
         root = ET.fromstring(data)
-        width = cls._length_to_px(root.attrib["width"])
-        height = cls._length_to_px(root.attrib["height"])
+        width = cls._length_to_px(root.attrib.get("width", "0px"))
+        height = cls._length_to_px(root.attrib.get("height", "0px"))
         return width, height
