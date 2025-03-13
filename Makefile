@@ -30,8 +30,7 @@ build:
 	$(BUILD)
 
 clean:
-	# find . -type f -name \*.pyc -exec rm {} \;
-	fd -e pyc -I -x rm
+	fd -e pyc -I -x rm || find . -type f -name \*.pyc -exec rm {} \;
 	rm -rf dist *.egg-info .coverage .DS_Store
 
 cleandocs:
