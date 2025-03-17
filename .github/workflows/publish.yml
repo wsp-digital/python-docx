@@ -38,4 +38,4 @@ jobs:
         AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
       run: |
         aws codeartifact login --tool twine --repository wsp-releases --domain wspdigital --domain-owner 649047142885
-        twine upload --repository codeartifact dist/python_docx-$RELEASE_VERSION.tar.gz
+        twine upload --repository codeartifact dist/wsp_python_docx-$RELEASE_VERSION.tar.gz
